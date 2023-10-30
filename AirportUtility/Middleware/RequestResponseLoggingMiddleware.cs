@@ -49,7 +49,6 @@ namespace AirportUtility.Middleware
         {
             response.Body.Seek(0, SeekOrigin.Begin);
             var body = new StreamReader(response.Body).ReadToEnd();
-            //response.Body.Seek(0, SeekOrigin.Begin);
             return $"Status: {response.StatusCode}, Body: {body}";
         }
 

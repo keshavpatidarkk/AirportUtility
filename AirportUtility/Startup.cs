@@ -3,8 +3,6 @@ using AirportUtility.Contract.IBusiness;
 using AirportUtility.Contract.IData;
 using AirportUtility.Data;
 using AirportUtility.Middleware;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
 namespace AirportUtility
 {
     public class Startup

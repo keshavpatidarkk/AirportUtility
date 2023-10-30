@@ -1,18 +1,16 @@
 using AirportUtility;
-using AirportUtility.Business;
-using AirportUtility.Contract.IBusiness;
-using AirportUtility.Contract.IData;
-using AirportUtility.Data;
-using AirportUtility.Middleware;
 using Serilog;
-using System;
 
 public class Program
 {
     public static void Main(string[] args)
     {
+        var configuration = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json") // Load your appsettings.json file
+            .Build();
+
         Log.Logger = new LoggerConfiguration()
-            .WriteTo.File("log.txt")
+            .ReadFrom.Configuration(configuration) // Read Serilog settings from the configuration
             .CreateLogger();
 
         CreateHostBuilder(args).Build().Run();
@@ -26,31 +24,3 @@ public class Program
             });
 }
 
-//var builder = WebApplication.CreateBuilder(args);
-
-
-//Log.Logger = new LoggerConfiguration()
-//           .WriteTo.File("log.txt")
-//           .CreateLogger();
-
-//// Add services to the container.
-
-//builder.Services.AddControllers();
-//builder.Services.AddSwaggerGen();
-
-////Inject Dependencies
-//builder.Services.AddScoped<IAirportManager, AirportManager>();
-//builder.Services.AddScoped<IAirportData, AirportData>();
-
-//var app = builder.Build();
-
-//// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-//    app.UseSwagger();
-//    app.UseSwaggerUI();
-//}
-
-//app.MapControllers();
-//app.UseMiddleware<RequestResponseLoggingMiddleware>();
-//app.Run();
