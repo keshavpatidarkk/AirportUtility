@@ -1,0 +1,64 @@
+2023-10-30 10:23:22.036 +05:30 [INF] Request: Microsoft.AspNetCore.Http.DefaultHttpRequest
+2023-10-30 11:02:34.749 +05:30 [INF] Request: GET localhost:44359/Airport?originCode=LHR
+2023-10-30 11:03:23.170 +05:30 [INF] Request: GET localhost:44359/Airport?originCode=LHR
+2023-10-30 11:08:58.392 +05:30 [INF] Request: GET localhost:44359/Airport?originCode=LHR
+2023-10-30 11:17:08.638 +05:30 [INF] Request: GET localhost:44359/Airport?originCode=LHR
+2023-10-30 11:17:14.879 +05:30 [INF] Response: Status: 200, Body: [{"code":"JFK","name":"John F. Kennedy International Airport","city":"New York","country":"USA"},{"code":"CDG","name":"Charles de Gaulle Airport","city":"Paris","country":"France"},{"code":"AMS","name":"Amsterdam Airport Schiphol","city":"Amsterdam","country":"Netherlands"},{"code":"FRA","name":"Frankfurt Airport","city":"Frankfurt","country":"Germany"}]
+2023-10-30 11:19:25.665 +05:30 [INF] Request: GET localhost:44359/Airport?originCode=LHR
+2023-10-30 11:19:27.905 +05:30 [INF] Response: Status: 200, Body: [{"code":"JFK","name":"John F. Kennedy International Airport","city":"New York","country":"USA"},{"code":"CDG","name":"Charles de Gaulle Airport","city":"Paris","country":"France"},{"code":"AMS","name":"Amsterdam Airport Schiphol","city":"Amsterdam","country":"Netherlands"},{"code":"FRA","name":"Frankfurt Airport","city":"Frankfurt","country":"Germany"}]
+2023-10-30 11:21:24.201 +05:30 [INF] Request: GET localhost:44359/Airport?originCode=XYZ
+2023-10-30 11:41:44.091 +05:30 [INF] Request: GET localhost:44359/Airport?originCode=XYZ
+2023-10-30 11:41:56.568 +05:30 [ERR] An unhandled exception occurred while processing the request.
+System.Collections.Generic.KeyNotFoundException: The given key 'XYZ' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at AirportUtility.Business.AirportManager.GetDestinationsByOrigin(String originCode) in C:\Users\Keshav\source\repos\AirportUtility\AirportUtility\Business\AirportManager.cs:line 21
+   at AirportUtility.Controllers.AirportController.GetDestinations(String originCode) in C:\Users\Keshav\source\repos\AirportUtility\AirportUtility\Controllers\AirportController.cs:line 27
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at AirportUtility.Middleware.RequestResponseLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Keshav\source\repos\AirportUtility\AirportUtility\Middleware\RequestResponseLoggingMiddleware.cs:line 28
+2023-10-30 11:56:25.852 +05:30 [INF] Request: GET localhost:44359/Airport?originCode=XYZ
+2023-10-30 11:56:26.256 +05:30 [INF] Response: Status: 404, Body: No destinations found for the specified origin code.
+2023-10-30 11:57:14.920 +05:30 [INF] Request: GET localhost:44359/Airport?originCode=FRA
+2023-10-30 11:57:14.948 +05:30 [INF] Response: Status: 404, Body: No destinations found for the specified origin code.
+2023-10-30 11:57:52.292 +05:30 [INF] Request: GET localhost:44359/Airport?originCode=JFK
+2023-10-30 11:57:52.357 +05:30 [INF] Response: Status: 200, Body: [{"code":"LHR","name":"Heathrow Airport","city":"London","country":"United Kingdom"},{"code":"CDG","name":"Charles de Gaulle Airport","city":"Paris","country":"France"},{"code":"HND","name":"Haneda Airport","city":"Tokyo","country":"Japan"}]
+2023-10-30 12:07:32.391 +05:30 [INF] Request: GET localhost:44359/Airport?originCode=JFK
+2023-10-30 12:07:32.906 +05:30 [INF] Response: Status: 200, Body: [{"code":"LHR","name":"Heathrow Airport","city":"London","country":"United Kingdom"},{"code":"CDG","name":"Charles de Gaulle Airport","city":"Paris","country":"France"},{"code":"HND","name":"Haneda Airport","city":"Tokyo","country":"Japan"}]
+2023-10-30 12:08:15.054 +05:30 [INF] Request: GET localhost:44359/Airport?originCode=XYZ
+2023-10-30 12:08:15.167 +05:30 [INF] Response: Status: 404, Body: No destinations found for the specified origin code.
+2023-10-30 12:24:50.446 +05:30 [INF] Request: GET localhost:44359/Airport/GetDestinations?originCode=LHR
+2023-10-30 12:24:50.731 +05:30 [INF] Response: Status: 200, Body: [{"code":"JFK","name":"John F. Kennedy International Airport","city":"New York","country":"USA"},{"code":"CDG","name":"Charles de Gaulle Airport","city":"Paris","country":"France"},{"code":"AMS","name":"Amsterdam Airport Schiphol","city":"Amsterdam","country":"Netherlands"},{"code":"FRA","name":"Frankfurt Airport","city":"Frankfurt","country":"Germany"}]
+2023-10-30 12:38:12.535 +05:30 [INF] Request: GET localhost:44359/Airport/GetDestinations?originCode=LHR
+2023-10-30 12:38:12.592 +05:30 [INF] Response: Status: 404, Body: 
+2023-10-30 12:39:07.031 +05:30 [INF] Request: GET localhost:44359/Airport/GetDestinations?originCode=LHR
+2023-10-30 12:39:07.094 +05:30 [INF] Response: Status: 404, Body: 
+2023-10-30 12:39:57.839 +05:30 [INF] Request: GET localhost:44359/Airport/GetDestinations?originCode=LHR
+2023-10-30 12:39:58.250 +05:30 [INF] Response: Status: 200, Body: [{"code":"JFK","name":"John F. Kennedy International Airport","city":"New York","country":"USA"},{"code":"CDG","name":"Charles de Gaulle Airport","city":"Paris","country":"France"},{"code":"AMS","name":"Amsterdam Airport Schiphol","city":"Amsterdam","country":"Netherlands"},{"code":"FRA","name":"Frankfurt Airport","city":"Frankfurt","country":"Germany"}]
+2023-10-30 12:40:36.254 +05:30 [INF] Request: GET localhost:44359/Airport/GetDestinations?originCode=XYZ
+2023-10-30 12:40:36.329 +05:30 [INF] Response: Status: 404, Body: No destinations found for the specified origin code.
+2023-10-30 12:49:36.520 +05:30 [INF] Request: GET localhost:44359/Airport/GetDestinations?originCode=LHR
+2023-10-30 12:49:36.929 +05:30 [INF] Response: Status: 200, Body: [{"code":"JFK","name":"John F. Kennedy International Airport","city":"New York","country":"USA"},{"code":"CDG","name":"Charles de Gaulle Airport","city":"Paris","country":"France"},{"code":"AMS","name":"Amsterdam Airport Schiphol","city":"Amsterdam","country":"Netherlands"},{"code":"FRA","name":"Frankfurt Airport","city":"Frankfurt","country":"Germany"}]
+2023-10-30 12:58:33.463 +05:30 [INF] Request: GET localhost:44359/Airport/GetDestinations?originCode=LHR
+2023-10-30 12:58:33.973 +05:30 [INF] Response: Status: 200, Body: [{"code":"JFK","name":"John F. Kennedy International Airport","city":"New York","country":"USA"},{"code":"CDG","name":"Charles de Gaulle Airport","city":"Paris","country":"France"},{"code":"AMS","name":"Amsterdam Airport Schiphol","city":"Amsterdam","country":"Netherlands"},{"code":"FRA","name":"Frankfurt Airport","city":"Frankfurt","country":"Germany"}]
+2023-10-30 13:04:31.300 +05:30 [INF] Request: GET localhost:44359/Airport/GetDestinations?originCode=LHR
+2023-10-30 13:04:31.392 +05:30 [INF] Response: Status: 200, Body: [{"code":"JFK","name":"John F. Kennedy International Airport","city":"New York","country":"USA"},{"code":"CDG","name":"Charles de Gaulle Airport","city":"Paris","country":"France"},{"code":"AMS","name":"Amsterdam Airport Schiphol","city":"Amsterdam","country":"Netherlands"},{"code":"FRA","name":"Frankfurt Airport","city":"Frankfurt","country":"Germany"}]
+2023-10-30 13:04:31.457 +05:30 [INF] Request: GET localhost:44359/favicon.ico
+2023-10-30 13:04:31.457 +05:30 [INF] Response: Status: 404, Body: 
+2023-10-30 13:04:40.239 +05:30 [INF] Request: GET localhost:44359/Airport/GetDestinations?originCode=ABCD
+2023-10-30 13:04:40.539 +05:30 [INF] Response: Status: 400, Body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-9e970d7f36aa338024e2decc65dbef2f-318bc8e6dad59c83-00","errors":{"originCode":["The field originCode must be a string with a minimum length of 3 and a maximum length of 3."]}}
+2023-10-30 14:59:28.102 +05:30 [INF] Request: GET localhost:44359/Airport/GetDestinations?originCode=XYZ
+2023-10-30 14:59:28.773 +05:30 [INF] Response: Status: 404, Body: No destinations found for the specified origin code.
+2023-10-30 15:01:07.345 +05:30 [INF] Request: GET localhost:44359/Airport/GetDestinations?originCode=LHR
+2023-10-30 15:01:07.711 +05:30 [INF] Response: Status: 200, Body: [{"code":"JFK","name":"John F. Kennedy International Airport","city":"New York","country":"USA"},{"code":"CDG","name":"Charles de Gaulle Airport","city":"Paris","country":"France"},{"code":"AMS","name":"Amsterdam Airport Schiphol","city":"Amsterdam","country":"Netherlands"},{"code":"FRA","name":"Frankfurt Airport","city":"Frankfurt","country":"Germany"}]
