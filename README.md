@@ -17,7 +17,9 @@ The project's codebase is organized as follows:
 - **Middleware**: The Middleware directory contains custom middleware, primarily a logging middleware. This middleware logs incoming requests and outgoing responses, which can be useful for tracking and debugging purposes.
 
 - **Models**: This directory holds model classes used to represent and structure data within the application.
-
+## Logging
+Middleware is used for creating logs used serilog nuget package
+-Logs are stored in log.txt file inside logs folder
 ## How to Use
 
 To use this project, you can follow these steps:
